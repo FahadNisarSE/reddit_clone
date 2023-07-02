@@ -1,3 +1,4 @@
+import UserAuthForm from "./UserAuthForm";
 import { Icons } from "./icons";
 import Link from "next/link";
 
@@ -12,7 +13,8 @@ const SignIn = () => {
           User Agreement and Privacy Policy.
         </p>
 
-        {/* Sign In Form */}
+        {/* We can pass the classname to the children like a normal div */}
+        <UserAuthForm className="" />
 
         <p className="px-8 text-center text-sm text-zinc-700">New to Reddit?{" "} <Link href='/sign-up' className="hover:textg-zinc-800 text-sm underline underline-offset-4">Sign Up</Link></p>
 
