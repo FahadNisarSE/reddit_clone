@@ -2,7 +2,8 @@ import Link from "next/link";
 import { buttonVariants } from "./ui/Button";
 import { getAuthSession } from "@/lib/auth";
 import UserAccountNav from "./UserAccountNav";
-import { Icons } from "./icons";
+import { Icons } from "./Icons";
+import SearchBar from "./SearchBar";
 
 export default async function Navbar() {
   const session = await getAuthSession();
@@ -17,7 +18,7 @@ export default async function Navbar() {
           </p>
         </Link>
 
-        {/* Search Bar */}
+        <SearchBar />
         {session?.user ? (
           <UserAccountNav user={session.user} />
         ) : (

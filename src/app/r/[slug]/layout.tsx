@@ -3,6 +3,8 @@ import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { format } from "date-fns";
 import { notFound } from "next/navigation";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/Button";
 
 interface layoutProps {
   children: React.ReactNode;
@@ -93,6 +95,16 @@ const layout = async ({ children, params: { slug } }: layoutProps) => {
                   subredditName={subreddit.name}
                 />
               ) : null}
+
+              <Link
+                href={`r/${slug}/submit`}
+                className={buttonVariants({
+                  variant: "outline",
+                  className: "w-full mb-6",
+                })}
+              >
+                Create Post
+              </Link>
             </dl>
           </div>
         </div>
